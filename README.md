@@ -48,7 +48,7 @@ Tabela category_analytics: foram analisadas informações úteis para o time de 
 #
 ### Agregação de Dados
 
-Para a agregação dos dados, foi utilizada uma query (disponível no pipeline web_scrap_storage_to_bq na função category_analise) que agrupa os dados por categorias e calcula médias, valores mínimos e máximos das avaliações e preços. Com esses valores, é possível identificar quais livros têm maior avaliação entre o público e quais categorias possuem os livros melhor avaliados.
+Para a agregação dos dados, foi utilizada uma query (disponível no pipeline web_scrap_storage_to_bq na função category_analise) que agrupa os dados por categorias e calcula médias, valores mínimos e máximos das avaliações e preços. Com esses valores, é possível identificar por categoria quais livros têm maior avaliação entre o público.
 #
 ### Teste dos Dados
 
