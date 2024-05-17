@@ -9,14 +9,16 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import os
 ```
+
 Para inserção dos dados no BigQuery usando Apache Beam:
+```python
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam.runners import DataflowRunner
 from apache_beam.runners.interactive.interactive_runner import InteractiveRunner
 from google.cloud import bigquery
 from apache_beam.transforms.sql import SqlTransform
-
+```
 
 ## Modelagem de dados
 Os dados foram extraídos e salvos em formato Parquet no Google Cloud Storage. As bibliotecas requests, BeautifulSoup e pandas foram utilizadas para requisições, scraping e criação de dataframes, respectivamente. A biblioteca os foi usada para a criação de variáveis de ambiente e acesso ao cloud.
@@ -39,7 +41,7 @@ Estrutura das Tabelas
 | `extraction_date`| Data de extração dos dados                            |
 
 
-#
+
 A descrição de cada coluna está disponível no BigQuery para facilitar a compreensão do dataset.
 #
 Tabela category_analytics: foram analisadas informações úteis para o time de negócios, que podem auxiliar na tomada de decisões, como médias, valores mínimos e máximos entre as avaliações existentes, preço médio e mínimo por categorias.
