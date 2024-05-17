@@ -40,17 +40,16 @@ Estrutura das Tabelas
 | `star_rating`    | Avaliação do livro em estrelas                        |
 | `extraction_date`| Data de extração dos dados                            |
 
-
-
-A descrição de cada coluna está disponível no BigQuery para facilitar a compreensão do dataset.
 #
+*A descrição de cada coluna está disponível no BigQuery para facilitar a compreensão do dataset.
+
 Tabela category_analytics: foram analisadas informações úteis para o time de negócios, que podem auxiliar na tomada de decisões, como médias, valores mínimos e máximos entre as avaliações existentes, preço médio e mínimo por categorias.
-#
-##Agregação de Dados
+
+### Agregação de Dados
 
 Para a agregação dos dados, foi utilizada uma query (disponível no pipeline web_scrap_storage_to_bq na função category_analise) que agrupa os dados por categorias e calcula médias, valores mínimos e máximos das avaliações e preços. Com esses valores, é possível identificar quais livros têm maior avaliação entre o público e quais categorias possuem os livros melhor avaliados.
-#
-##Teste dos Dados
+
+### Teste dos Dados
 
 Para testar o primeiro pipeline, é possível alterar a saída de dados para 'content/nomedoarquivo.parquet', disponibilizado pelo próprio Colab, e verificar a estrutura final do processamento. O resultado do segundo pipeline pode ser acessado através do link disponibilizado pelo BigQuery:
 https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1smywebscrap-423316!2sestudos_gcp
