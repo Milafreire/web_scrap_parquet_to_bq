@@ -25,7 +25,8 @@ Os dados foram extraídos e salvos em formato Parquet no Google Cloud Storage. A
 
 Os dados resultantes do scraping foram salvos no storage e utilizados para a criação das tabelas no BigQuery. Não foi necessário tratamento adicional dos dados, pois os nomes das colunas foram definidos durante a extração, e o dataframe não necessitava de limpeza para valores nulos ou NaN, tampouco formatação de datas.
 
-A criação da tabela no BigQuery foi feita utilizando o Apache Beam, através do módulo beam.io.WriteToBigQuery. A análise foi realizada utilizando o módulo SqlTransform do Apache Beam, disponível na query do pipeline web_scrap_storage_to_bq na função category_analise.
+A criação da tabela no BigQuery foi feita utilizando o Apache Beam, através do módulo beam.io.WriteToBigQuery e aplicado um beam.Distinct() para evitar dados repetidos no dataset.
+A análise foi realizada por meio de query utilizando sql por meio do módulo SqlTransform do Apache Beam, disponível na query do pipeline web_scrap_storage_to_bq na função category_analise.
 Estrutura das Tabelas
 **Tabela `books_to_scrap`**:
 
