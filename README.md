@@ -26,7 +26,7 @@ Os dados foram extraídos e salvos em formato Parquet no Google Cloud Storage. A
 Os dados resultantes do scraping foram salvos no storage e utilizados para a criação das tabelas no BigQuery. Não foi necessário tratamento adicional dos dados, pois os nomes das colunas foram definidos durante a extração, e o dataframe não necessitava de limpeza para valores nulos ou NaN, tampouco formatação de datas.
 
 A criação da tabela no BigQuery foi feita utilizando o Apache Beam, através do módulo beam.io.WriteToBigQuery e write_truncate como forma de inscrição no BQ.
-A análise foi realizada por meio de query utilizando sql por meio do módulo SqlTransform do Apache Beam, disponível na query do pipeline web_scrap_storage_to_bq na função category_analise.
+A análise foi realizada por query utilizando sql por meio do módulo SqlTransform do Apache Beam, disponível na query do pipeline web_scrap_storage_to_bq na função category_analise.
 Estrutura das Tabelas
 **Tabela `books_to_scrap`**:
 
@@ -51,7 +51,5 @@ Tabela category_analytics: foram analisadas informações úteis para o time de 
 Para a agregação dos dados, foi utilizada uma query (disponível no pipeline web_scrap_storage_to_bq na função category_analise) que agrupa os dados por categorias e calcula médias, valores mínimos e máximos das avaliações e preços. Com esses valores, é possível identificar por categoria quais livros têm maior avaliação entre o público.
 #
 ### Teste dos Dados
-
-Para testar o primeiro pipeline, é possível alterar a saída de dados para 'content/nomedoarquivo.parquet', disponibilizado pelo próprio Colab, e verificar a estrutura final do processamento. O resultado do segundo pipeline pode ser acessado através do link disponibilizado pelo BigQuery:
-https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1smywebscrap-423316!2sestudos_gcp
+Para testar o primeiro pipeline, é possível alterar a saída de dados para 'content/nomedoarquivo.parquet', disponibilizado pelo próprio Colab, e verificar a estrutura final do processamento. O resultado do segundo pipeline pode ser acessado através do link disponibilizado pelo BigQuery: [Bigquery](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1smywebscrap-423316!2sestudos_gcp)
 
